@@ -2,19 +2,19 @@ package myproject;
 
 import java.util.Scanner;
 
-public class Bank_Account {
-	private long Account_Number;
+public class BankAccount {
+	private long AccountNumber;
 	private String Name;
 	private String Password;
 	
 	private long Balance;
-	private int Interest_Rate;
+	private int InterestRate;
 	Scanner scan=new Scanner(System.in);
-	public void Create_Account()
+	public void CreateAccount()
 	{
 		
 		System.out.println("Enter the Bank Account Number :");
-		Account_Number=scan.nextLong();
+		AccountNumber=scan.nextLong();
 		System.out.println("Enter the Name of the Person :");
 		Name=scan.next();
 		System.out.println("Enter the Password :");
@@ -22,7 +22,7 @@ public class Bank_Account {
 		System.out.println("Enter the balance :");
 		Balance=scan.nextLong();
 		System.out.println("Enter the Interest Rate");
-		Interest_Rate=scan.nextInt();
+		InterestRate=scan.nextInt();
 		
 	}
 		
@@ -30,7 +30,7 @@ public class Bank_Account {
 	{
 		System.out.println("Enter the Account number to deposit");
 		long acc=scan.nextLong();
-		if(Account_Number==acc)
+		if(AccountNumber==acc)
 		{
 			System.out.println("Enter the amount to be deposit :");
 			long Amount=scan.nextLong();
@@ -83,13 +83,13 @@ public class Bank_Account {
 		
 		
 	}
-	public void Credit_Interest()
+	public void CreditInterest()
 	{
 		System.out.println("Enter the Account number");
 		long acc=scan.nextLong();
-		if(Account_Number==acc)
+		if(AccountNumber==acc)
 		{
-			Balance+=(Balance*Interest_Rate/1200);
+			Balance+=(Balance*InterestRate/1200);
 			System.out.println("Credited Interest is :"+Balance);
 			
 		}
@@ -99,11 +99,11 @@ public class Bank_Account {
 		}
 			
 	}
-	public void Display_Details()
+	public void DisplayDetails()
 	{
 		System.out.println("Enter the Account number\n");
 		long acc=scan.nextLong();
-		if(Account_Number==acc)
+		if(AccountNumber==acc)
 		{
 			System.out.println("-----Details-----");
 			System.out.println("\nAccount Number :"+Account_Number+"\nName :"+Name+"\nBalance :"+Balance+"\nInterest rate :"+Interest_Rate);
@@ -118,7 +118,7 @@ public class Bank_Account {
 	
 	public static void main(String[] args)
 	{
-		Bank_Account b1=new Bank_Account();
+		BankAccount b1=new BankAccount();
 		
 		Scanner scan=new Scanner(System.in);
 		
@@ -130,7 +130,7 @@ public class Bank_Account {
 			switch(ch)
 			{
 			case 1:
-				b1.Create_Account();
+				b1.CreateAccount();
 				break;
 			
 			case 2:
@@ -142,11 +142,11 @@ public class Bank_Account {
 				break;
 			
 			case 4:
-				b1.Credit_Interest();
+				b1.CreditInterest();
 				break;
 			
 			case 5:	
-				b1.Display_Details();
+				b1.DisplayDetails();
 				break;
 				
 			case 6:
